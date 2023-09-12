@@ -1,7 +1,7 @@
 package com.app.diary.models
 
 data class UserRequest(
-    val email: String,
-    val password: String,
-    val username: String
+    var email: String,
+    var password: String,
+    var username: String
 )

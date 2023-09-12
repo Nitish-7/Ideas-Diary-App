@@ -5,37 +5,33 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.app.diary.models.NoteRequest
 import com.app.diary.models.NoteResponse
-import com.app.diary.repository.UserNoteRepository
-import com.app.diary.util.ApiResultHandler
+import com.app.diary.repository.OfflineNoteRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
-class NotesViewModel @Inject constructor(private val noteRepository: UserNoteRepository):ViewModel() {
+class NotesViewModel @Inject constructor(private val offlineNoteRepository: OfflineNoteRepository):ViewModel() {
 
-    val noteData get()=noteRepository.noteData
-    val noteChangeStatus get()=noteRepository.noteChangeStatus
+    val noteData get()=offlineNoteRepository.noteData
+    val noteChangeStatus get()=offlineNoteRepository.noteChangeStatus
 
-    fun getNotes(){
-       viewModelScope.launch{
-           noteRepository.getNotes()
-       }
+    fun createNote(noteRequest: NoteRequest){
+        CoroutineScope(Dispatchers.IO).launch{
+            offlineNoteRepository.createNote(noteRequest)
+        }
+
     }
-
-    suspend fun createNote(noteRequest: NoteRequest){
-        viewModelScope.launch{
-            noteRepository.createNote(noteRequest)
+    fun updateNote(note: NoteResponse){
+        CoroutineScope(Dispatchers.IO).launch{
+            offlineNoteRepository.updateNote(note)
         }
     }
-    suspend fun updateNote(noteId:String,noteRequest: NoteRequest){
-        viewModelScope.launch{
-            noteRepository.updateNote(noteId, noteRequest)
-        }
-    }
-    suspend fun deleteNote(noteId:String){
-        viewModelScope.launch{
-            noteRepository.deleteNote(noteId)
+    fun deleteNote(note:NoteResponse){
+        CoroutineScope(Dispatchers.IO).launch{
+            offlineNoteRepository.deleteNote(note)
         }
     }
 }

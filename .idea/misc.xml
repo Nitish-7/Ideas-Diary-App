@@ -3,12 +3,13 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Users/91979/AndroidStudioProjects/Diary/app/src/main/res/drawable/ic_add.xml" value="0.104" />
         <entry key="..\:/Users/91979/AndroidStudioProjects/Diary/app/src/main/res/layout/activity_main.xml" value="0.21467391304347827" />
         <entry key="..\:/Users/91979/AndroidStudioProjects/Diary/app/src/main/res/layout/fragment_edit_note.xml" value="0.21467391304347827" />
         <entry key="..\:/Users/91979/AndroidStudioProjects/Diary/app/src/main/res/layout/fragment_login.xml" value="0.22826086956521738" />
         <entry key="..\:/Users/91979/AndroidStudioProjects/Diary/app/src/main/res/layout/fragment_notes.xml" value="0.22826086956521738" />
         <entry key="..\:/Users/91979/AndroidStudioProjects/Diary/app/src/main/res/layout/fragment_profile.xml" value="0.1" />
-        <entry key="..\:/Users/91979/AndroidStudioProjects/Diary/app/src/main/res/layout/fragment_register.xml" value="0.21467391304347827" />
+        <entry key="..\:/Users/91979/AndroidStudioProjects/Diary/app/src/main/res/layout/fragment_register.xml" value="0.136" />
         <entry key="..\:/Users/91979/AndroidStudioProjects/Diary/app/src/main/res/layout/note_item.xml" value="0.22826086956521738" />
       </map>
     </option>
